@@ -1,11 +1,44 @@
 import Image from "next/image";
-
+import BloglistCard from "../components/bloglistCard/bloglistcard";
+import BlogCard from "../components/blogcard/blogcard";
 import styles from "./styles.module.css";
+import Link from "next/link";
+
 export default function Blog() {
+  const bloglist = [
+    { key: 1, src: "/ux.png", alt: "UX/UI", caption: "UX/UI" },
+    { key: 2, src: "/react.png", alt: "React", caption: "React" },
+    { key: 3, src: "/ux.png", alt: "PHP", caption: "PHP" },
+    { key: 4, src: "/react.png", alt: "Javascript", caption: "Javascript" },
+  ];
+  const blogs = [
+    {
+      key: 1,
+      src: "/blog.png",
+      alt: "Blog",
+      title:
+        "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution",
+      text: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
+      author: "Lina",
+      avatarsrc: "/avatar.png",
+      views: 251244,
+    },
+    {
+      key: 2,
+      src: "/blog.png",
+      alt: "Blog",
+      title:
+        "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution",
+      text: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
+      author: "Lina",
+      avatarsrc: "/avatar.png",
+      views: 251232,
+    },
+  ];
   return (
     <div>
       <div className={styles.heroback}>
-        <div className="flex flex-wrap justify-between md:px-[100px] px-[20px] py-[70px]">
+        <div className="flex flex-wrap justify-between md:px-[114px] px-[20px] py-[70px]">
           <div className="md:w-1/2 w-full">
             <div className="flex flex-col gap-[10px]">
               <span className={styles.inspirationText}>
@@ -20,7 +53,7 @@ export default function Blog() {
                 eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing
                 elit, sed do eiusmod tempor
               </p>
-              <button className={styles.blogbutton}>
+              <button className={styles.blogbutton + " cursor-pointer"}>
                 <span className={styles.blogbuttonText}>
                   Start learning now
                 </span>
@@ -38,10 +71,42 @@ export default function Blog() {
           </div>
         </div>
       </div>
-      <div className="md:py-[7%] px-[80px]">
+      <div className="md:py-[7%] px-[110px]">
         <div>
           <h4 className={styles.listText}>Reading blog list</h4>
-          <div className="flex flex-wrap"></div>
+          <div className="flex gap-[20px] mt-[26px]">
+            {bloglist.map((blog, index) => (
+              <div className="w-1/4">
+                <BloglistCard
+                  key={blog.key}
+                  src={blog.src}
+                  alt={blog.alt}
+                  caption={blog.caption}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div
+        className={
+          styles.heroback + " md:px-[116px] px-[20px] pt-[93px] pb-[60px]"
+        }
+      >
+        <div>
+          <div className="flex justify-between">
+            <h4 className={styles.listText + " inline-block"}>Related Blog</h4>
+            <button className="cursor-pointer">
+              <span className={styles.seeallText}>See all</span>
+            </button>
+          </div>
+          <div className="py-[41px]">
+            <div className="flex gap-[40px]">
+              {blogs.map((blo, index) => (
+                <BlogCard {...blo} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

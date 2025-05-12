@@ -1,0 +1,26 @@
+.readmore {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 180%;
+  letter-spacing: 2%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+}
+.text {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 180%;
+  letter-spacing: 2%;
+}
+.title {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 180%;
+  letter-spacing: 0%;
+  color: #252641;
+}

@@ -5,5 +5,10 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
+  color: black;
   margin: 0;
+  line-height: 63px;
+}
+.captiondiv {
+  border-radius: 12px;
 }

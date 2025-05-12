@@ -44,3 +44,11 @@
   line-height: 100%;
   letter-spacing: 0%;
 }
+.seeallText {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #49bbbd;
+}
