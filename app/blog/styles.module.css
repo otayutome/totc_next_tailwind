@@ -1,0 +1,46 @@
+.heroback {
+  background-color: rgba(157, 204, 255, 0.2);
+}
+.inspirationText {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.blogTitle {
+  font-family: Poppins;
+  color: #2f327d;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.loremText {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 2%;
+}
+.blogbutton {
+  width: 236px;
+  height: 63px;
+  border-radius: 12px;
+  background-color: #49bbbd;
+}
+.blogbuttonText {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: white;
+}
+.listText {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
