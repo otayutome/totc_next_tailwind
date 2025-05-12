@@ -19,7 +19,7 @@ const BlogCard = (props: BlogCardProps) => {
       key={props.key}
       className="w-full py-[60px] px-[20px] bg-white rounded-[20px]"
     >
-      <Image src={props.src} alt={props.alt} width={700} height={700} />
+      <Image src={props.src} alt={props.alt} width={900} height={900} />
       <div>
         <p className={styles.title}>{props.title}</p>
       </div>
@@ -32,7 +32,7 @@ const BlogCard = (props: BlogCardProps) => {
             height={70}
           />
         </div>
-        <h6>{props.author}</h6>
+        <h6 className={styles.author}>{props.author}</h6>
       </div>
       <div>
         <p className={styles.text}>{props.text}</p>

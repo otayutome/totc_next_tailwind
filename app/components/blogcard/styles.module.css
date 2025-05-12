@@ -15,6 +15,7 @@
   font-size: 20px;
   line-height: 180%;
   letter-spacing: 2%;
+  color: #696984;
 }
 .title {
   font-family: Poppins;
@@ -23,4 +24,11 @@
   line-height: 180%;
   letter-spacing: 0%;
   color: #252641;
+}
+.author {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 2%;
 }
