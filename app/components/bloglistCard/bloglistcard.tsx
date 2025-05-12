@@ -10,7 +10,9 @@ interface BloglistCardProps {
 const BloglistCard = (props: BloglistCardProps) => {
   return (
     <div key={props.key} className="w-full relative">
-      <Image src={props.src} alt={props.alt} width={300} height={300} />
+      <div className="w-full h-auto">
+        <Image src={props.src} alt={props.alt} width={800} height={800} />
+      </div>
       <div
         className={
           styles.captiondiv +
