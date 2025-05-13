@@ -132,6 +132,8 @@ export default function Blog() {
           {/* End of Button for next and previous blog */}
         </div>
       </div>
+
+      {/* Start of Marketing Articles */}
       <div className="md:px-[116px] px-[20px] py-[60px]">
         <div>
           <div className="flex justify-between">
@@ -144,6 +146,7 @@ export default function Blog() {
           </div>
         </div>
       </div>
+      {/* End of Marketing Articles */}
     </div>
   );
 }
