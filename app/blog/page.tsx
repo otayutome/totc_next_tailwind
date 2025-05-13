@@ -135,7 +135,12 @@ export default function Blog() {
       <div className="md:px-[116px] px-[20px] py-[60px]">
         <div>
           <div className="flex justify-between">
-            <h4 className={styles.listText + " inline-block"}>Latest Blog</h4>
+            <h4 className="inline-block font-['poppins'] font-[500] text-[30px]">
+              Marketing Articles
+            </h4>
+            <button className="cursor-pointer">
+              <span className={styles.seeallText}>See all</span>
+            </button>
           </div>
         </div>
       </div>
