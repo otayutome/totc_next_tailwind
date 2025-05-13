@@ -1,24 +1,53 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
-
 export default defineConfig([
+  // JS Base
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,cjs}"],
+    languageOptions: {
+      globals: globals.browser,
+    },
     plugins: { js },
-    extends: ["js/recommended"],
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    languageOptions: { globals: globals.browser },
-  },
-  {
     rules: {
-      "react/react-in-jsx-scope": "off",
+      ...js.configs.recommended.rules,
     },
   },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+
+  // TypeScript + JSX/TSX support
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+      globals: globals.browser,
+    },
+    plugins: {
+      "@typescript-eslint": tseslint.plugin,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+    },
+  },
+
+  // React Config
+  {
+    files: ["**/*.{jsx,tsx}"],
+    plugins: {
+      react: pluginReact,
+    },
+    languageOptions: {
+      globals: globals.browser,
+    },
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules,
+
+      // 👇 Disable old JSX scope rule (for React 17+)
+      "react/react-in-jsx-scope": "off",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
 ]);
