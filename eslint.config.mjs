@@ -15,10 +15,7 @@ export default defineConfig([
     languageOptions: { globals: globals.browser },
   },
   {
-    rules: {
-      "no-unused-vars": "warn",
-      "no-undef": "warn",
-    },
+    rules: {},
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
