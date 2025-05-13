@@ -2,6 +2,7 @@ import Image from "next/image";
 import BloglistCard from "../components/bloglistCard/bloglistcard";
 import BlogCard from "../components/blogcard/blogcard";
 import styles from "./styles.module.css";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Blog() {
@@ -13,7 +14,7 @@ export default function Blog() {
   ];
   const blogs = [
     {
-      key: 1,
+      index: 1,
       src: "/blog.png",
       alt: "Blog",
       title:
@@ -24,7 +25,7 @@ export default function Blog() {
       views: 251244,
     },
     {
-      key: 2,
+      index: 2,
       src: "/blog.png",
       alt: "Blog",
       title:
@@ -76,7 +77,7 @@ export default function Blog() {
           <h4 className={styles.listText}>Reading blog list</h4>
           <div className="flex gap-[20px] mt-[26px]">
             {bloglist.map((blog, index) => (
-              <div className="w-1/4">
+              <div key={index} className="w-1/4">
                 <BloglistCard
                   key={blog.key}
                   src={blog.src}
@@ -94,21 +95,58 @@ export default function Blog() {
         }
       >
         <div>
+          {/* Start of Related Blog */}
           <div className="flex justify-between">
             <h4 className={styles.listText + " inline-block"}>Related Blog</h4>
             <button className="cursor-pointer">
               <span className={styles.seeallText}>See all</span>
             </button>
           </div>
+          {/* End of Related Blog */}
+
+          {/* Start of Blog Card */}
           <div className="py-[41px]">
             <div className="flex gap-[40px]">
               {blogs.map((blo, index) => (
-                <BlogCard {...blo} />
+                <BlogCard key={index} {...blo} />
               ))}
             </div>
           </div>
+          {/* End of Blog Card */}
+
+          {/* Start of Button for next and previous blog */}
+
+          <div className="flex justify-end gap-[15px]">
+            <div className="w-[50px] h-[50px] bg-[#49BBBD] rounded-[4px] flex items-center justify-center hover:opacity-50">
+              <button className="cursor-pointer">
+                <FaArrowLeft className="text-white" />
+              </button>
+            </div>
+            <div className="w-[50px] h-[50px] bg-[#49BBBD] rounded-[4px] flex items-center justify-center hover:opacity-50">
+              <button className="cursor-pointer">
+                <FaArrowRight className="text-white" />
+              </button>
+            </div>
+          </div>
+
+          {/* End of Button for next and previous blog */}
         </div>
       </div>
+
+      {/* Start of Marketing Articles */}
+      <div className="md:px-[116px] px-[20px] py-[60px]">
+        <div>
+          <div className="flex justify-between">
+            <h4 className="inline-block font-['poppins'] font-[500] text-[30px]">
+              Marketing Articles
+            </h4>
+            <button className="cursor-pointer">
+              <span className={styles.seeallText}>See all</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* End of Marketing Articles */}
     </div>
   );
 }
